@@ -15,11 +15,11 @@
                 "scripts/content.js"
             ],
             "matches":[
-                "https://www.amazon.com"
+                "https://www.amazon.com/*"
             ]
         }
     ],
-    "permissions" : ["scripting", "activeTab"],
+    "permissions" : ["scripting", "activeTab", "tabs"],
     "action": {
         "default_icon": {
             "16": "images/icon-16.png",

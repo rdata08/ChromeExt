@@ -1,12 +1,13 @@
-const website = 'https://www.amazon.com';
+const searchBar = document.getElementById('nav-search-bar-form')
 
-chrome.tabs.query({ url: website }, async (tabs) => {
-    if (tabs.length > 0) {
-        const tab = tabs[0];
-        await chrome.scripting.insertCSS({
-            target: { tabID: tab.id },
-            files: ['clean.css']
-        });
-    }
-})
+if (searchBar) {
+    document.body.innerHTML = '';
+    const container = document.createElement('div');
+    container.style.display = 'flex';
+    container.style.justifyContent = 'center';
+    container.style.alignItems = 'center';
+    container.style.height = '100vh';
 
+    container.appendChild(searchBar);
+    document.body.appendChild(container);
+}
