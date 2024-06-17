@@ -10,3 +10,8 @@ container.style.height = '100vh';
 container.appendChild(searchBar);
 document.body.appendChild(container);
 
+document.documentElement.style.display = 'block'; 
+
+
+
+
