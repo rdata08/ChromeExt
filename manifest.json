@@ -23,6 +23,14 @@
             ],
             "run_at": "document_end",
             "all_frames": true
+        },
+        {
+            "js": [
+                "scripts/sponsored.js"
+            ],
+            "matches": [
+                "*://*.amazon.com/s?*"
+            ]
         }
     ],
     "permissions": [
