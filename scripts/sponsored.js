@@ -13,3 +13,9 @@ console.log('Found ${sponsoredGallery.length} sponsored galleries');
 sponsoredGallery.forEach((div) => {
     div.remove();
 });
+
+const iFrames = document.querySelectorAll('iframe');
+
+iFrames.forEach((iFrame) => {
+    iFrame.remove();
+});
