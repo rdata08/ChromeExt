@@ -4,7 +4,7 @@ const searchBar = document.getElementById('nav-search-bar-form');
 //Clears body content -------------------------------------------------------------------------
 document.body.innerHTML = '';
 
-// var imageURL = chrome.runtime.getURL("images/cadabra-logo.png")
+var imageURL = chrome.runtime.getURL("images/cadabra-logo.png")
 
 //Cadabra Logo
 const image = document.createElement('img');
