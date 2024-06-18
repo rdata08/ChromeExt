@@ -4,19 +4,22 @@ const searchBar = document.getElementById('nav-search-bar-form');
 //Clears body content -------------------------------------------------------------------------
 document.body.innerHTML = '';
 
+//Get logo URL
 var imageURL = chrome.runtime.getURL("images/cadabra-logo.png")
 
 //Cadabra Logo
 const image = document.createElement('img');
 image.src = imageURL;
 image.alt = 'Cadabra Logo';
+image.width = 400;
+image.height = 400;
 
 //Create new div for image
 const imgContainer = document.createElement('div');
 imgContainer.style.display = 'flex';
 imgContainer.style.justifyContent = 'center';
 imgContainer.style.alignItems = 'center';
-imgContainer.style.height = '1000';
+imgContainer.style.height = '50vh';
 
 //Append img to imgContainer
 imgContainer.appendChild(image);
@@ -26,7 +29,7 @@ const container = document.createElement('div');
 container.style.display = 'flex';
 container.style.justifyContent = 'center';
 container.style.alignItems = 'center';
-container.style.height = '100vh';
+container.style.height = '50vh';
 container.style.color = 'white';
 
 //Append searchBar to container
