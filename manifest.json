@@ -16,12 +16,12 @@
             ],
             "css": [
                 "styles/landingPage.css"
-            ],           
+            ],
             "matches": [
                 "https://www.amazon.com/",
                 "https://www.amazon.com/ref=nav_logo"
             ],
-            "run_at": "document_end", 
+            "run_at": "document_end",
             "all_frames": true
         }
     ],
@@ -37,5 +37,16 @@
             "48": "images/icon-48.png",
             "128": "images/icon-128.png"
         }
-    }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "images/cadabra-logo.png"
+            ],
+            "matches": [
+                "https://www.amazon.com/",
+                "https://www.amazon.com/ref=nav_logo"
+            ]
+        }
+    ]
 }
