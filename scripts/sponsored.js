@@ -19,3 +19,9 @@ const iFrames = document.querySelectorAll('iframe');
 iFrames.forEach((iFrame) => {
     iFrame.remove();
 });
+
+const videos = document.querySelectorAll('div[class*="s-flex-geom"]');
+
+videos.forEach((video) => {
+    video.remove();
+});
