@@ -12,3 +12,9 @@ removeAd('div[class*="AdHolder"]', 'individual ads');  //individual ads
 removeAd('div[class*="s-widget-spacing-large', 'carousel');  //ad carousels
 removeAd('iframe', 'sidebar');  //sidebar ads
 removeAd('div[class*="s-flex-geom', 'video');  //video ads
+removeAd('div[class*="copilot-secure-display"]', 'behavioral')  //behavioral ads
+
+// Keep next page bar
+const nextPageBar = document.getElementById('a-section a-spacing-none s-result-item s-flex-full-width s-widget s-widget-spacing-large');
+
+document.

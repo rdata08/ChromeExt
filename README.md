@@ -1,4 +1,4 @@
 
 # Cadabra
 
-A minimalist Amazon landing page. Stops me from buying stuff I don't need.
+Chrome Extension for Amazon - Buy what you need. Removes all sponsored products from Amazon.com.
