@@ -1,4 +1,4 @@
 
 # Cadabra
 
-Chrome Extension for Amazon - Buy what you need. Removes all sponsored products from Amazon.com.
+Chrome Extension for Amazon - Buy what you need. Removes all sponsored and targeted products from Amazon.com.
