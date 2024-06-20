@@ -10,13 +10,26 @@ function removeAd (selector, adType) {
     console.log(`Found ${removedElements.length} ads of type ${adType}`);
 }
 
+const allProducts = document.querySelectorAll('div[data-index]');
+
+// Ensures all products are authentic.
+allProducts.forEach((product) => {
+    if (product.getAttribute('data-component-type') == '' ){
+        product.remove();
+    }
+});
+
+// const adCarousels = document.querySelectorAll('div[class*="s-widget-spacing-large]');
+
+// adCarousels.forEach((ad) => {
+//     if (ad.getAttribute('data-uuid')) {
+//         ad.remove();
+//     }
+// });
+
+
 removeAd('div[class*="AdHolder"]', 'individual ads');  //individual ads
-removeAd('div[class*="s-widget-spacing-large', 'carousel');  //ad carousels
+removeAd('div[class*="s-widget-spacing-large"][data-uuid]', 'carousel');  //ad carousels
 removeAd('iframe', 'sidebar');  //sidebar ads
-removeAd('div[class*="s-flex-geom', 'video');  //video ads
+removeAd('div[class*="s-flex-geom"]', 'video');  //video ads
 removeAd('div[class*="copilot-secure-display"]', 'behavioral')  //behavioral ads
-
-// Keep next page bar
-// const nextPageBar = document.getElementById('a-section a-spacing-none s-result-item s-flex-full-width s-widget s-widget-spacing-large');
-
-// document.

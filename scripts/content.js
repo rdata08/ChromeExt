@@ -44,3 +44,4 @@ body.appendChild(searchBarDiv);
 document.body.appendChild(body);
 
 document.documentElement.style.display = 'block'; 
+
