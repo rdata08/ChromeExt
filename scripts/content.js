@@ -1,47 +1,44 @@
-//Search Bar
-const searchBar = document.getElementById('nav-belt');
+// Given a selector, and ad type, removes ads from search pages.
+// Logs number of ads removed and ad type in console.
+function removeAd (selector, adType) {
+    const removedElements = document.querySelectorAll(selector);
+    
+    removedElements.forEach((elem) => {
+        elem.remove();
+    });
 
-//Clears body content -------------------------------------------------------------------------
-document.body.innerHTML = '';
+    console.log(`Found ${removedElements.length} ads of type ${adType}`);
+}
 
-//Get logo URL
-var imageURL = chrome.runtime.getURL("images/cadabra-logo.png")
+// Removes all ads from search query.
+function removeAds() {
+    const allProducts = document.querySelectorAll('div[data-index]');
 
-//Cadabra Logo
-const image = document.createElement('img');
-image.src = imageURL;
-image.alt = 'Cadabra Logo';
-image.width = 800;
-image.height = 800;
+    // Ensures all products are authentic.
+    allProducts.forEach((product) => {
+        if (product.getAttribute('data-component-type') == '' ){
+            product.remove();
+        }
+    });
+    
+    removeAd('div[class*="AdHolder"]', 'individual ads');  //individual ads
+    removeAd('div[class*="s-widget-spacing-large"][data-uuid]', 'carousel');  //ad carousels
+    removeAd('iframe', 'sidebar');  //sidebar ads
+    removeAd('div[class*="s-flex-geom"]', 'video');  //video ads
+    removeAd('div[class*="copilot-secure-display"]', 'behavioral')  //behavioral ads
+}
 
-//Create new div for image
-const imgDiv = document.createElement('div');
-imgDiv.style.display = 'flex';
-imgDiv.style.flexDirection = 'column';
-imgDiv.style.justifyContent = 'center';
-imgDiv.style.alignItems = 'center';
-imgDiv.appendChild(image);  //Append img to imgContainer
+// Initial call to remove ads
+removeAds();
 
-//Create div to store search bar
-const searchBarDiv = document.createElement('div');
-searchBarDiv.style.display = 'flex';
-searchBarDiv.style.flexDirection = 'column';
-searchBarDiv.style.color = 'white';
-searchBarDiv.appendChild(searchBar);  //Append searchBar to container
+// Observes DOM changes to remove ads when user goes to the next page or applies filters.
+const mutationObserver = new MutationObserver((mutationsList) => {
+    for (let mutation of mutationsList) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            removeAds(); 
+            break;
+        }
+    }
+});
 
-//Body div
-const body = document.createElement('div');
-body.style.display = 'flex';
-body.style.flexDirection = 'column';
-body.style.justifyContent = 'center';
-body.style.height = '100vh';
-
-//Body div nests both divs inside
-body.appendChild(imgDiv);
-body.appendChild(searchBarDiv);
-
-//Append body div to document
-document.body.appendChild(body);
-
-document.documentElement.style.display = 'block'; 
-
+mutationObserver.observe(document.body, {childList: true, subtree: true});
