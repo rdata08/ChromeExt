@@ -3,11 +3,31 @@ div {
 }
 
 /*Center search bar*/
-#nav-belt, #navbar .nav-belt {
+#nav-belt, .nav-belt {
     position: relative !important;
     width: 80% !important;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
     font-size: 14px !important;
     z-index: 5 !important;
 }
 
+#nav-search {
+    width: 50% !important;
+}
 
+#nav-search .nav-searchbar .nav-fill {
+    width: 50% !important;
+}
+
+/* .nav-left {
+
+}
+
+.nav-fill {
+
+}
+
+.nav-right {
+
+} */
