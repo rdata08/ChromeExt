@@ -61,3 +61,17 @@ div {
 .nav-line-2 {
     position: static !important;
 }
+
+.orders {
+    width: 10%;
+    height: 80px;
+    border-radius: 15px;
+    background-color: aqua;
+}
+
+.cart {
+    width: 10%;
+    height: 80px;
+    border-radius: 15px;
+    background-color: aqua;
+}

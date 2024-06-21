@@ -7,8 +7,12 @@ const findSearchBar = document.getElementsByClassName('nav-search-field');
 const searchBar = findSearchBar[0];
 
 //Language Option 
-
 const languageButton = document.getElementById('icp-nav-flyout');
+
+//Returns Button
+const ordersButton = document.getElementById('nav-orders');
+
+const cartButton = document.getElementById('nav-cart');
 
 //Clears body content -------------------------------------------------------------------------
 document.body.innerHTML = '';
@@ -65,21 +69,25 @@ deliverTo.appendChild(deliverToButton);
 search.classList.add('searchBar');
 search.appendChild(searchBar);
 
-language.classList.add('language')
+language.classList.add('language');
 language.appendChild(languageButton);
+
+orders.classList.add('orders');
+orders.appendChild(ordersButton);
+
+cart.classList.add('cart');
+cart.appendChild(cartButton);
 
 searchBarDisplay.appendChild(deliverTo);
 searchBarDisplay.appendChild(search);
 searchBarDisplay.appendChild(language);
-// searchBarDisplay.appendChild(orders);
-// searchBarDisplay.appendChild(cart);
+searchBarDisplay.appendChild(orders);
+searchBarDisplay.appendChild(cart);
 
 
 //Body div nests both divs inside
 body.appendChild(imgDiv);
 body.appendChild(searchBarDisplay);
-// body.appendChild(deliverToButton);
-// body.appendChild(searchBarDiv);
 
 //Append body div to document
 document.body.appendChild(body);
