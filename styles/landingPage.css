@@ -51,6 +51,13 @@ div {
 }
 
 .language {
+    width: 10%;
+    height: 80px;
+    border-radius: 15px;
     text-align: center;
     color: white;
+}
+
+.nav-line-2 {
+    position: static !important;
 }

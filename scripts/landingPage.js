@@ -29,6 +29,7 @@ imgDiv.style.display = 'flex';
 imgDiv.style.flexDirection = 'column';
 imgDiv.style.justifyContent = 'center';
 imgDiv.style.alignItems = 'center';
+imgDiv.style.transform = 'translateY(-100px)'
 imgDiv.appendChild(image);  //Append img to imgContainer
 
 //Body div
@@ -54,6 +55,7 @@ searchBarDisplay.style.flexDirection = 'row';
 searchBarDisplay.style.justifyContent = 'flex-start';
 searchBarDisplay.style.alignItems = 'center';
 searchBarDisplay.style.alignSelf = 'center';
+searchBarDisplay.style.transform = 'translateY(-200px)'
 
 //Deliver Button
 deliverTo.classList.add('deliverTo');
