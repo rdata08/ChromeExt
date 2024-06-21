@@ -3,7 +3,8 @@ const deliverToButton = document.getElementById('nav-global-location-slot');
 deliverToButton.style.cssText = '';
 
 //Search Bar
-const searchBar = document.getElementById('nav-search-bar-form');
+const findSearchBar = document.getElementsByClassName('nav-search-field');
+const searchBar = findSearchBar[0];
 
 //Language Option 
 
@@ -68,8 +69,8 @@ language.appendChild(languageButton);
 searchBarDisplay.appendChild(deliverTo);
 searchBarDisplay.appendChild(search);
 searchBarDisplay.appendChild(language);
-searchBarDisplay.appendChild(orders);
-searchBarDisplay.appendChild(cart);
+// searchBarDisplay.appendChild(orders);
+// searchBarDisplay.appendChild(cart);
 
 
 //Body div nests both divs inside

@@ -1,5 +1,5 @@
 div {
-    background-color: #31404c;
+    background-color: #2e3d4a;
 }
 
 .searchBarDisplay {
@@ -20,31 +20,37 @@ div {
     background-color: rgb(6, 159, 255);
     height: 100%;
     width: 100%;
+    border-radius: 15px;
 }
 
-#nav-global-location-data-modal-action {
-    display: block !important;
-    height: 100% !important;
-    width: 100% !important;
-}
-
+/* Button Box */
 #nav-global-location-popover-link {
     height: 100%;
     width: 100%;
 }
 
+/* Button Box - Text*/
 #glow-ingress-block{
     background-color: rgb(37, 109, 234);
     height: 100%;
     width: 100%;
     border-radius: 15px;
     font-size: 20px;
-    color: black;
+    color: white;
 }
 
 .searchBar {
-    width: 15%;
+    width: 50%;
     height: 80px;
-    background-color: rgb(6, 159, 255);
     border-radius: 15px;
+}
+
+#twotabsearchtextbox {
+    width: 100% !important;
+    height: 80px !important;
+}
+
+.language {
+    text-align: center;
+    color: white;
 }
