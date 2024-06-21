@@ -1,6 +1,6 @@
 // Given a selector, and ad type, removes ads from search pages.
 // Logs number of ads removed and ad type in console.
-function removeAd (selector, adType) {
+function removeAd(selector, adType) {
     const removedElements = document.querySelectorAll(selector);
     
     removedElements.forEach((elem) => {
@@ -8,6 +8,23 @@ function removeAd (selector, adType) {
     });
 
     console.log(`Found ${removedElements.length} ads of type ${adType}`);
+}
+
+// A more enhanced ad finder: searches for attributes inside of nested divs.
+function removeAd2(selector1, selector2, adType) {
+    const divs = document.querySelectorAll(selector1)
+    
+    adCount = 0
+    divs.forEach((div) => {
+        const nestedAttribute = div.querySelector(selector2)
+        
+        if (!nestedAttribute){
+            div.remove();
+            adCount += 1;
+        }
+    });
+
+    // console.log(`Found ${adCount} ads of type ${adType}`);    
 }
 
 // Removes all ads from search query.
@@ -25,7 +42,9 @@ function removeAds() {
     removeAd('div[class*="s-widget-spacing-large"][data-uuid]', 'carousel');  //ad carousels
     removeAd('iframe', 'sidebar');  //sidebar ads
     removeAd('div[class*="s-flex-geom"]', 'video');  //video ads
-    removeAd('div[class*="copilot-secure-display"]', 'behavioral')  //behavioral ads
+    removeAd('div[class*="copilot-secure-display"]', 'behavioral');  //behavioral ads
+
+    removeAd2('div[class*="s-widget-spacing-large"]', 'div[class*="template=PAGINATION"]', 'banner'); // banner ads
 }
 
 // Initial call to remove ads

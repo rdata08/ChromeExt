@@ -29,7 +29,8 @@
                 "scripts/content.js"
             ],
             "matches": [
-                "*://*.amazon.com/s?*"
+                "*://*.amazon.com/s?*",
+                "*://*.amazon.com/gp/*"
             ]
         }
     ],
