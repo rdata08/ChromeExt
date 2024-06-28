@@ -8,3 +8,4 @@ app = Flask(__name__)
 @app.route('/price', methods=['GET'])
 def fetch_total():
     url = ''
+    
