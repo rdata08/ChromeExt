@@ -24,7 +24,21 @@ function removeAd2(selector1, selector2, adType) {
         }
     });
 
-    // console.log(`Found ${adCount} ads of type ${adType}`);    
+    console.log(`Found ${adCount} ads of type ${adType}`);    
+}
+
+function removeAd3(selector1, attribute, adType) {
+    const divs = document.querySelectorAll(selector1)
+    
+    adCount = 0
+    divs.forEach((div) => {
+        if (div.getAttribute(attribute) == '') {
+            div.remove();
+            adCount += 1
+        }
+    });
+
+    console.log(`Found ${adCount} ads of type ${adType}`);   
 }
 
 // Removes all ads from search query.
@@ -41,10 +55,10 @@ function removeAds() {
     removeAd('div[class*="AdHolder"]', 'individual ads');  //individual ads
     removeAd('div[class*="s-widget-spacing-large"][data-uuid]', 'carousel');  //ad carousels
     removeAd('iframe', 'sidebar');  //sidebar ads
-    removeAd('div[class*="s-flex-geom"]', 'video');  //video ads
     removeAd('div[class*="copilot-secure-display"]', 'behavioral');  //behavioral ads
-
     removeAd2('div[class*="s-widget-spacing-large"]', 'div[class*="template=PAGINATION"]', 'banner'); // banner ads
+    removeAd3('div[class*="s-flex-geom"]', 'data-asin', 'video');  //video ads
+    removeAd3('div[data-index]', 'data-component-type', 'all'); //ensures all products are authentic
 }
 
 // Initial call to remove ads
